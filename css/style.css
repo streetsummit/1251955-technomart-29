@@ -38,6 +38,10 @@
 }
 
 /* Global */
+.inner-page {
+    background-color:var(--dark-red);
+}
+
 body {
     min-width: 1200px;
     margin: 0;
@@ -246,7 +250,7 @@ img {
 
 /* Popular goods */
 
-.popular-goods__header,
+.goods__header,
 .popular-brands__header {
     background-color: var(--background-lightpink);
 }
@@ -258,16 +262,16 @@ img {
     text-transform: uppercase;
 }
 
-.popular-goods__title,
+.goods__title,
 .popular-brands__title {
     color: var(--light-blue);
 }
 
-.popular-goods__list {
+.goods__list {
     list-style: none;
 }
 
-.popular-goods__item-title {    
+.goods__item-title {    
     font-family: "PT Sans", Arial, sans-serif;
     font-size: 18px;
     line-height: 20px;
