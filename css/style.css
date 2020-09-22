@@ -89,7 +89,7 @@ img {
 }
 
 .header__logo a:active {
-    background-color: var(--extra-dark-red:);
+    background-color: var(--extra-dark-red);
 }
 
 .header__search input {
