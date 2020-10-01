@@ -44,9 +44,20 @@
 }
 
 /* Global */
+html {
+    height: 100%;
+}
 
 body {
-    min-width: 1200px;
+    min-width: 960px;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 
+        min-content 
+        1fr 
+        min-content;
+    align-content: start;
+
     margin: 0;
     padding: 0;
     font-family: "Cuprum", Arial, sans-serif;
@@ -76,22 +87,42 @@ img {
     padding: 0;
 }
 
-/* Header */
+.disabled-link {
+    pointer-events: none;
+}
 
+/* Header */
 
 .header {
     background-color: var(--background-lightgrey);
+}
+
+.container {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .header__top {
     background-color: var(--basic-blue);
 }
 
-.header__logo a {
-    background-color: var(--basic-red);
+.header__top-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr max-content;
 }
 
-.header__logo a:active {
+.header__logo {    
+    width: 220px;
+    height: 47px;
+    line-height: 50px;
+    text-align: center;
+
+    background-color: var(--basic-red);
+    box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.header__logo:active {
     background-color: var(--extra-dark-red);
 }
 
@@ -129,6 +160,15 @@ img {
     background-color: var(--bright-green);
 }
 
+.header__wrapper-inner {
+    padding-bottom: 60px;
+}
+
+.header__middle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 .header__description {
     font-size: 16px;
     line-height: 23px;
@@ -150,26 +190,22 @@ img {
 
 /*Пользовательский блок */
 
-.login__link,
-.register__link,
-.username {
+.user-box {
+    justify-self: end;
+}
+
+.user-box__link {
     font-size: 21px;
     line-height: 21px;
     color: var(--basic-black);
     background-color: var(--basic-white);
 }
 
-.login__link:hover,
-.register__link:hover {
+.user-box__link:hover:not(.user-box__link--username) {
     color: var(--basic-red);
 }
 
-.login__link:active,
-.register__link:active {
-    color: var(--light-grey);
-}
-
-.username:active {
+.user-box__link:active {
     color: var(--light-grey);
 }
 
@@ -193,9 +229,14 @@ img {
 
 /* Site-navigation */
 
-.site-navigation {
-    list-style: none;
+.header__navigation {
     background-color: var(--light-blue);
+}
+
+.site-navigation {
+    padding: 0;
+    margin: 0;
+    list-style: none;    
   }
 
 .site-navigation a {
@@ -232,28 +273,42 @@ img {
 
 /* Offers */
 
-.offers__list {
-    list-style: none;
+.offers__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas: 
+                        "materials tools technic"
+                        "slider slider sale"
+                        "slider slider delivery";
+
+    padding-top: 59px;
+    padding-bottom: 59px;
 }
 
 .offers__item:first-child {
     background-color: var(--special-orange);
+    grid-area: materials;
 }
 
 .offers__item:nth-child(2) {
     background-color: var(--special-cyan);
+    grid-area: tools;
 }
 
 .offers__item:nth-child(3) {
     background-color: var(--special-lilac);
+    grid-area: technic;
 }
 
 .offers__item:nth-child(4) {
     background-color: var(--special-lightgreen);
+    grid-area: sale;
 }
 
-.offers__item:last-child {
+.offers__item:nth-child(5) {
     background-color: var(--special-orange);
+    grid-area: delivery;
 }
 
 .offers__item-title {
@@ -277,21 +332,47 @@ img {
 /* Slider */
 
 .offers__slider {
-    background-color: var(--basic-grey);
+    grid-area: slider;
+}
+
+.slider__slide {
+    position: relative;    
+}
+.slider__slide img {
+    display: block;
+}
+
+.slide__description {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
 }
 
 .slide__title {
     font-size: 36px;
     line-height: 36px;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: uppercase;    
 }
 
-/* Catalog */
+
+.catalog-button {
+    position: absolute;
+    bottom: 27px;
+    left: 24px;
+}
+
+/* Популярные товары */
+
+.popular-goods__wrapper {
+    padding-bottom: 70px;
+}
 
 .popular-goods__header,
 .popular-brands__header {
     background-color: var(--background-lightpink);
+    margin-bottom: 20px;
 }
 
 .section__title {
@@ -299,6 +380,7 @@ img {
     line-height: 30px;
     font-weight: 400;
     text-transform: uppercase;
+    margin: 0;
 }
 
 .popular-goods__title,
@@ -308,6 +390,11 @@ img {
 
 .popular-goods__list {
     list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
 }
 
 .catalog__item-title {    
@@ -374,6 +461,16 @@ img {
 
 /* Popular brans */
 
+.popular-brands__wrapper {
+    padding-bottom: 70px;
+}
+
+.popular-brands__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
 .popular-brands__list {
     list-style: none;
 }
@@ -383,6 +480,11 @@ img {
 
 .services {
     background-color: var(--background-lightgrey);
+}
+
+.services__wrapper {
+    padding-top: 64px;
+    padding-bottom: 99px;
 }
 
 .services__title,
@@ -395,6 +497,33 @@ img {
     font-family: "PT Sans", Arial, sans-serif;
     font-size: 13px;
     color: var(--basic-black);
+}
+
+/* Grid for Services*/
+
+
+.services__tabs {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 
+                    61px
+                    61px
+                    61px;
+}
+
+.services__tabs--delivery {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.services__tabs--guarantee {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.services__tabs--credit {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
 }
 
 /* Стили вкладок */
@@ -441,11 +570,29 @@ img {
     display: block;
 }
 
+.index-columns__wrapper {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+}
+
 /* About */
+
+.about {
+    grid-column: 1 / 7;
+}
 
 .transport-companies__list {
     list-style: none;
     color: var(--basic-black);
+}
+
+/* Contacts*/
+
+.contacts {
+    grid-column: 9 / 13;
 }
 
 /* Footer */
@@ -454,8 +601,18 @@ img {
     background-color: var(--light-blue);
 }
 
+.footer__top-wrapper {
+    display: flex;
+}
+
 .footer__logo {
+    width: 220px;
+    height: 68px;
+    line-height: 74px;
+    text-align: center;
+
     background-color: var(--basic-red);
+    box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .footer__contacts,
@@ -493,6 +650,11 @@ img {
     background-color: var(--basic-blue);
 }
 
+.footer__bottom-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 .footer__link {
     color: var(--light-orange);
 }
@@ -519,6 +681,7 @@ img {
   .social__link:active {
     background-color: var(--basic-red);
   }
+
 
 /* Стили для внутренней страницы каталога */
 
@@ -607,7 +770,7 @@ img {
 }
 
 .about-goods {
-    background-color: var(--light-grey);
+    background-color: var(--background-lightgrey);
 }
 
 .about-goods__title {
