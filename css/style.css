@@ -245,7 +245,6 @@ img {
     padding-left: 10px;
     font-size: 14px;
     color: var(--light-blue);
-    margin: 0;
 }
 
 /*Пользовательский блок */
@@ -998,26 +997,16 @@ img {
 }
 
 .footer__social {
-    display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.social__item {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background-color: var(--footer-icon-blue);
 }
 
 .social__link {
-    position: relative;
+    background-color: var(--footer-icon-blue);
     color: var(--basic-white);
   }
   
-  .social__item:hover,
-  .social__item:active {
+  .social__link:hover,
+  .social__link:active {
     background-color: var(--basic-red);
   }
 
