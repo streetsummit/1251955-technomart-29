@@ -966,7 +966,6 @@ img {
 }
 
 .footer__bottom {
-    padding-top: 35px;
     padding-bottom: 35px;
     font-size: 16px;
     line-height: 18px;
@@ -980,6 +979,7 @@ img {
 
 .footer__copyright {
     margin: 0;
+    margin-top: 35px;
     min-width: 270px;
 }
 
@@ -998,11 +998,33 @@ img {
 
 .footer__social {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 30px;
+    display: flex;
+}
+
+.social__item {
+    margin-right: 3px;
+}
+
+.social__item:last-child {
+    margin-right: 0;
 }
 
 .social__link {
-    background-color: var(--footer-icon-blue);
+    display: inline-block;
+    width: 42px;
+    height: 42px;    
+
+    font-size: 0;
     color: var(--basic-white);
+
+    background-color: var(--footer-icon-blue);   
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    
   }
   
   .social__link:hover,
@@ -1010,45 +1032,32 @@ img {
     background-color: var(--basic-red);
   }
 
-.social__link--vk::before {
-    content: "";
-    position: absolute;
-    top: 12px;
-    left: 10px;
-    width: 26px;
-    height: 15px;
+.social__link--vk {
     background-image: url(../img/social__icon-vk.svg);
-    background-repeat: no-repeat;
 }
 
-.social__link--fb::before {
-    content: "";
-    position: absolute;
-    top: 12px;
-    left: 10px;
-    width: 26px;
-    height: 15px;
+.social__link--fb {
     background-image: url(../img/social__icon-fb.svg);
-    background-repeat: no-repeat;
 }
 
-.social__link--ig::before {
-    content: "";
-    position: absolute;
-    top: 12px;
-    left: 10px;
-    width: 26px;
-    height: 15px;
+.social__link--ig {
     background-image: url(../img/social__icon-ig.svg);
-    background-repeat: no-repeat;
+    
 }
 
 .footer__feedback {
+    min-width: 300px;
+    margin-top: 35px;
     display: flex;
+    justify-content: start;
 }
 
 .footer__feedback p {
     margin: 0;
+}
+
+.footer__feedback p:first-child {
+    margin-right: 50px;
 }
 
 /* Стили для внутренней страницы каталога */
