@@ -23,6 +23,7 @@
     --basic-green: #63A63E;
     --bright-green: #5FBB2D;
     --dark-green: #518534;
+    --shadow-green: #367315;
 
     --light-orange: #FFD180;
        
@@ -150,6 +151,7 @@ img {
     display: block;
     padding-top: 9px;
     padding-bottom: 9px;
+
     color: var(--basic-white);
 }
 
@@ -236,6 +238,7 @@ img {
     left: 40px;
     width: 18px;
     height: 19px;
+
     background-image: url(../img/icon-phone.svg);
     background-repeat: no-repeat;
 }
@@ -321,15 +324,16 @@ img {
 .user-navigation {
     display: flex;
     margin: 0;
-    margin-top: 4px;
+    margin-top: 7px;
     padding: 0;
-    list-style: none;
+
+    list-style: none;    
     
 }
 
 .user-navigation__link {
     position: relative;
-    display: inline-block;
+    display: block;
     padding-left: 7px;
     padding-right: 7px;
     font-size: 16px;
@@ -578,28 +582,41 @@ img {
 
 /*Карточка товара*/
 
-.catalog-item-grid {
-    display: grid;
-    grid-template-rows: 180px auto 31px 38px;
-}
-
 .catalog__item {
+    position: relative;
+
     width: 220px;
     padding-bottom: 21px;
+    display: flex;
+    flex-direction: column;
 
     outline: 1px solid var(--card-border-grey);
     outline-offset: -1px;
 }
 
-.catalog__item img {
-    grid-row: 1 / 2;
+.catalog__item-link {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;    
+}
+
+.catalog__item-image {
+    width: 220px;
+    height: 177px;
+    margin: 0;
+    display: flex;
+    margin-bottom: 3px;   
+}
+
+.catalog__item-image img {
     margin: auto;
 }
 
 .catalog__item-title { 
-    grid-row: 2 / 3;
+    order: 2;
+    
     margin: 0;
-    padding: 0 30px 8px;
+    padding: 0 30px;
 
     font-family: "PT Sans", Arial, sans-serif;
     font-size: 18px;
@@ -618,7 +635,6 @@ img {
 }
 
 .old-price {
-    grid-row: 3 / 4;
     padding: 0 30px 13px;
 
     text-decoration-line: line-through;
@@ -627,27 +643,76 @@ img {
 }
 
 .actual-price {
-    grid-row: 4 / 5;
+    position: relative;    
+    width: 122px;
+    height: 38px;
+    margin-left: 45px;
+    margin-top: auto;
+
+    text-align: center;
     color: var(--basic-white);
+    line-height: 38px;
     background-color: var(--basic-red);
+    border-radius: 3px 0 0 3px;
+}
+
+.actual-price::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -19px;
+
+    border: 19px solid var(--basic-red);
+    border-right-width: 0;
+    border-left-color: var(--basic-red);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
 }
 
 /* Кнопки карточек */
-.catalog-item-options {
+.catalog-item-buttons {
+    position: absolute;
+    top: 38px;
+        
     display: none;
+    align-self: center;
 }
 
 .button-buy,
 .button-bookmark {
+    display: block;
+    width: 135px;
+    height: 38px;
+
     font-size: 14px;
-    line-height: 18px;
+    line-height: 38px;
     text-align: center;
     text-transform: uppercase;
+    border-radius: 2px;
+    box-sizing: border-box;
 }
 
 .button-buy {
+    position: relative;
+    padding-left: 12px;
     color: var(--basic-white);
     background-color: var(--basic-green);
+    margin-bottom: 10px;
+    box-shadow: inset 0px -3px 0px var(--shadow-green);
+}
+
+.button-buy::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 30px;
+
+    width: 15px;
+    height: 15px;   
+    background-image: url("../img/icon-cart.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    opacity: 0.3;
 }
 
 .button-buy:hover {
@@ -660,7 +725,7 @@ img {
 
 .button-bookmark {
     color: var(--light-blue);
-    border: 3px solid var(--basic-green);
+    border: 3px solid var(--basic-green);    
 }
 
 .button-bookmark:hover {
@@ -670,6 +735,19 @@ img {
 .button-bookmark:active {
     opacity: 0.5;
 }
+
+.catalog__item:hover {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.catalog__item:hover .catalog-item-buttons {
+    display: block;
+}
+
+.catalog__item:hover img {
+    display: none;
+}
+
 
 /* Popular brans */
 
@@ -1168,7 +1246,8 @@ img {
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 18px;
     margin: 0 0 48px 0;
     padding: 0;
 }
@@ -1186,7 +1265,7 @@ img {
 }
 
 .page-button {
-    display: inline-block;
+    display: block;
     width: 38px;
     height: 38px;
     margin-right: 10px;
