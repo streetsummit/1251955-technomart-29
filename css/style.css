@@ -483,6 +483,7 @@ img {
     width: 135px;
 
     background-color: var(--transparent-white-30);
+    text-decoration: none;
 }
 
 .offers__button:hover {
@@ -511,6 +512,7 @@ img {
     z-index: 1;
     top: 0;
     left: 0;
+    padding-left: 25px;
 }
 
 .slide__title {
@@ -520,8 +522,8 @@ img {
     text-transform: uppercase;
 }
 
-
 .catalog-button {
+    width: 195px;
     position: absolute;
     bottom: 27px;
     left: 24px;
@@ -766,6 +768,9 @@ img {
 }
 
 .popular-brands__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 220px;
     height: 145px;
     outline: 1px solid var(--card-border-grey);
