@@ -60,7 +60,7 @@
 
         <nav class="header__navigation">
           <ul class="site-navigation">
-            <li><a class="disabled-link">Главная</a></li>
+            <li><a class="site-navigation-current">Главная</a></li>
             <li><a href="">Компания</a></li>
             <li><a href="catalog.html">Каталог</a></li>
             <li><a href="">Новости</a></li>
@@ -278,10 +278,12 @@
               <h3 class="tab-content__title tab-content__title--delivery">Доставка</h3>
               <p class="text-content">Мы с удовольствием доставим ваш товар прямо<br>к вашему подъезду совершенно бесплатно!<br>Ведь мы неплохо заработаем,<br>поднимая его на ваш этаж!</p>
             </div>
+
             <div class="services__tab-content services__tab-content-2">
               <h3 class="tab-content__title tab-content__title--guarantee">Гарантия</h3>
               <p class="text-content">Если купленный у нас товар поломается или заискрит,<br>а также в случае пожара, спровоцированного его<br>возгоранием, вы всегда можете быть уверены в нашей<br>гарантии. Мы обменяем сгоревший товар на новый.<br>Дом уж восстановите как-нибудь сами.</p>
             </div>
+
             <div class="services__tab-content services__tab-content-3">
               <h3 class="tab-content__title tab-content__title--credit">Кредит</h3>
               <p class="text-content">Залезть в долговую яму стало проще!<br>Кредитные консультанты придут вам на помощь.</p>
@@ -312,7 +314,7 @@
               заехав в наш офис:
             </p>
             <a class="contacts__map" href="https://goo.gl/maps/P5XqEkdVfwUuvB6G9">
-              <img src="img/contacts__map.png" width="300" height="158" alt="Карта, указывающая расположение компании">
+              <img src="img/contacts__map.png" width="300" height="158" alt="Офис компании по адресу Большая Конюшенная улица, 19/8, Санкт-Петербург">
             </a>
             <a class="button contacts__button" href="">Заблудились? Напишите нам!</a>
           </section>
@@ -378,5 +380,35 @@
         </div>
       </div>
     </footer>
+
+    <section class="modal modal-feedback">
+      <h2 class="visually-hidden">Форма обратной связи</h2>
+      
+      <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
+          <p class="feedback-form--left">
+            <label for="feedback-username">Ваше имя:</label>
+            <input type="text" name="username" id="feedback-username" placeholder="Имя Фамилия">
+          </p>
+
+          <p class="feedback-form--right">
+            <label for="feedback-email">Ваш e-mail:</label>
+            <input type="email" name="email" id="feedback-email" placeholder="email@example.com">
+          </p>
+
+        <p class="feedback-message">
+          <label for="feedback-message">Текст письма:</label>
+          <textarea name="message" id="feedback-message" placeholder="В свободной форме"></textarea>
+        </p>
+        <button class="button feedback__button" type="submit">Отправить</button>
+      </form>
+
+      <button class="modal-close" type="button" aria-label="Закрыть"></button>
+    </section>
+    
+    <section class="modal modal-map">
+      <h2 class="visually-hidden">Как до нас добраться</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533252!2d30.320858716276664!3d59.938716481876185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1602457725296!5m2!1sru!2sru" width="943" height="449" allowfullscreen title="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург"></iframe>
+      <button class="modal-close" type="button" aria-label="Закрыть"></button>
+    </section>
   </body>
 </html>

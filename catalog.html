@@ -75,7 +75,7 @@
           <ul class="site-navigation">
             <li><a href="index.html">Главная</a></li>
             <li><a href="">Компания</a></li>
-            <li><a href="catalog.html">Каталог</a></li>
+            <li><a class="site-navigation-current" href="catalog.html">Каталог</a></li>
             <li><a href="">Новости</a></li>
             <li><a href="">Спецпредложения</a></li>
             <li><a href="">Доставка</a></li>
@@ -104,7 +104,7 @@
             <li class="breadcrumbs__item">
               <a href="">Инструмент</a>
             </li>
-            <li class="breadcrumbs__item breadcrumbs__item--current">
+            <li class="breadcrumbs__item">
               <a>Перфораторы</a>
             </li>
           </ul>
@@ -393,7 +393,7 @@
     <footer>
       <div class="footer__top">
         <div class="container footer__top-wrapper">
-          <a class="footer__logo disabled-link">
+          <a class="footer__logo" href="index.html">
             <img src="img/footer-logo.svg" width="138" height="23" alt="Логотип магазина «Техномарт»">
           </a>
           <ul class="footer__nav footer__nav--site">
@@ -448,5 +448,16 @@
         </div>
       </div>
     </footer>
+
+    <section class="modal modal-card">
+      <h2 class="visually-hidden">Добавлено в корзину</h2>
+      <p>Товар добавлен в корзину!</p>
+      <div class="modal-card-buttons">
+        <a class="button modal-order" href="">Оформить заказ</a>
+        <button class="button modal-continue" type="button">Продолжить покупки</button>
+      </div>
+      
+      <button class="modal-close" type="button" aria-label="Закрыть"></button>
+    </section>
   </body>
 </html>
