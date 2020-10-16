@@ -1766,10 +1766,7 @@ img {
     outline: 1px auto -webkit-focus-ring-color;
 }
 
-.filter-input:disabled + label,
-.filter-input:disabled:hover + label,
-.filter-input:checked:disabled + label,
-.filter-input:disabled:focus + label {
+.filter-input:disabled + label {
     opacity: 0.4;
     pointer-events: none;
 }
@@ -1799,13 +1796,6 @@ img {
 .filter-input-checkbox:hover + label::before,
 .filter-input-checkbox:checked:hover + label::before {
     opacity: 1;
-}
-
-.filter-input-checkbox:disabled + label::before,
-.filter-input-checkbox:disabled:hover + label::before,
-.filter-input-checkbox:checked:disabled + label::before,
-.filter-input-checkbox:disabled:focus + label::before {
-    opacity: 0.3;
 }
 
 .filter-input-radio + label::before {
@@ -1843,17 +1833,6 @@ img {
 .filter-input-radio:hover + label::after,
 .filter-input-radio:checked:hover + label::after {
     background-color: var(--checkbox-hover-color);
-}
-
-.filter-input-radio:disabled + label::before,
-.filter-input-radio:checked:disabled + label::before,
-.filter-input-radio:disabled:hover + label::before,
-.filter-input-radio:disabled:focus + label::before,
-.filter-input-radio:disabled + label::after,
-.filter-input-radio:checked:disabled + label::after,
-.filter-input-radio:disabled:hover + label::after,
-.filter-input-radio:disabled:focus + label::after {
-    opacity: 0.3;
 }
 
 .filter__button {
