@@ -216,7 +216,6 @@ img {
     height: 100%;
     padding-left: 42px;
 
-    color: var(--basic-white);
     background-color: var(--basic-blue);
     border: none;
     outline: none;
@@ -252,6 +251,35 @@ img {
 .header__search:focus-within .search-icon path {
     fill: var(--basic-red);
 }
+
+input[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: url("../img/icon-search-reset.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.search-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .search-input::-moz-placeholder { /* Firefox 19+ */
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .search-input:-ms-input-placeholder { /* IE 10+ */
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .search-input:-moz-placeholder { /* Firefox 18- */
+    font-size: 18px;
+    color: #fff;
+  }
 
 .search-navigation {
     display: flex;
@@ -919,11 +947,10 @@ img {
 
     display: flex;
     flex-direction: column;
-    width: 220px;
+    width: 218px;
     padding-bottom: 21px;
 
-    outline: 1px solid var(--card-border-grey);
-    outline-offset: -1px;
+    border: 1px solid var(--card-border-grey);    
 }
 
 .catalog__item-link {
@@ -936,8 +963,7 @@ img {
     display: flex;
     width: 220px;
     height: 177px;
-    margin-top: 0;
-    margin-bottom: 3px;
+    margin: 0;
 }
 
 .catalog__item-image img {
@@ -967,7 +993,7 @@ img {
 }
 
 .old-price {
-    padding: 0 30px 13px;
+    padding: 0 30px 14px;
 
     text-decoration-line: line-through;
     color: var(--basic-grey);
@@ -976,11 +1002,14 @@ img {
 
 .actual-price {
     position: relative;
-    width: 102px;
+    align-self: center;
+    width: 95px;
     
-    margin-left: 45px;
+    margin-right: 8px;
     margin-top: auto;
+    
     padding: 10px;
+    padding-left: 17px;
     text-align: center;
 
     color: var(--basic-white);
@@ -991,14 +1020,14 @@ img {
 .actual-price::after {
     content: "";
     position: absolute;
+    
     top: 0;
     right: -19px;
 
-    border: 19px solid var(--basic-red);
-    border-right-width: 0;
+    border-style: solid;
+    border-width: 19px 0 19px 19px;
+    border-color: transparent;
     border-left-color: var(--basic-red);
-    border-top-color: transparent;
-    border-bottom-color: transparent;
 }
 
 /* Кнопки карточек */
@@ -1885,48 +1914,48 @@ img {
     flex-wrap: wrap;
     justify-content: space-between;
     flex-shrink: 0;
-    width: 444px;
+    width: 440px;
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
 
+.sorting__item {
+    margin-right: auto;
+}
+
+.sorting__item:nth-child(4) {
+    margin-right: 17px;
+}
+
+.sorting__item:last-child {
+    margin-right: 0px;
+}
+
 .sorting__option {
-    margin-right: 40px;
-}
-
-.sorting__option:last-child {
-    margin-right: 0;
-}
-
-.sorting__option label {
     color: var(--transparent-black-30);
     border-bottom: 1px dashed var(--basic-red);
     
     cursor: pointer;
 }
 
-.sorting__option:hover label {
+.sorting__option:hover {
     color: var(--basic-black);
     border-bottom: 1px solid var(--basic-red);
 }
 
-.sorting-input-radio:checked + label {
+.sorting__item--selected .sorting__option {
     color: var(--basic-red);
     border-bottom: none;
 }
 
-.sorting__option .sorting-label-arrow,
-.sorting__option .sorting-label-arrow:hover {
-    border-bottom: none;
-}
-
-.sorting-label-arrow:hover .icon-arrow path {
+.sorting__option--arrow:hover .icon-arrow path {
     fill: var(--basic-black);
 }
 
-input:checked + .sorting-label-arrow .icon-arrow path {
+.sorting__item--selected .sorting__option--arrow path,
+.sorting__item--selected .sorting__option--arrow:hover path {
     fill: var(--basic-red);
 }
 

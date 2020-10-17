@@ -129,10 +129,10 @@
                     </div>
                     <div class="toggle toggle-min" tabindex="0" style="
                     left: 20%
-                  "></div>
+                  " aria-label="Изменить минимальную цену"></div>
                     <div class="toggle toggle-max" tabindex="0" style="
                     left: 50%
-                  "></div>
+                  " aria-label="Изменить максимальную цену"></div>
                   </div>
 
                   <div class="price-controls">
@@ -192,42 +192,44 @@
             <h2 class="sorting__title">Сортировка:</h2>
             
             <ul class="text-content">
-              <li class="sorting__option">
-                <input  class="visually-hidden sorting-input-radio" type="radio" name="sorting" value="price" id="sorting-price" checked>
-                <label for="sorting-price">По цене</label>
+              <li class="sorting__item sorting__item--selected">
+                <a class="sorting__option" href="">
+                  <span>по цене</span>
+                </a>
               </li>
 
-              <li class="sorting__option">
-                <input class="visually-hidden sorting-input-radio" type="radio" name="sorting" value="type" id="sorting-type">
-                <label for="sorting-type">По типу</label>
+              <li class="sorting__item">
+                <a class="sorting__option" href="">
+                  <span>по типу</span>
+                </a>
               </li>
 
-              <li class="sorting__option">
-                <input class="visually-hidden sorting-input-radio" type="radio" name="sorting" value="function" id="sorting-function">
-                <label for="sorting-function">По фунционалу</label>
+              <li class="sorting__item">
+                <a class="sorting__option" href="">
+                  <span>по функционалу</span>
+                </a>
               </li>
-              
-              <li class="sorting__option">
-                <input class="visually-hidden sorting-input-radio" type="radio" name="arrow-sorting" value="up" id="sorting-up" checked>
-                <label class="sorting-label-arrow" for="sorting-up">
-                  <span class="visually-hidden">По возрастанию</span>
-                  <svg class="icon-arrow icon-arrow-up" width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+              <li class="sorting__item sorting__item--selected">
+                <a class="sorting__option--arrow" href="">
+                  <span class="visually-hidden">по возрастанию</span>
+                  <svg class="icon-arrow icon-arrow-up" width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <path d="M5.66241 0L11.1624 10L0.162415 10" fill="#C5C5C5"/>
-                    </svg>
-                </label>
+                  </svg>
+                </a>
               </li>
 
-              <li class="sorting__option">
-                <input class="visually-hidden sorting-input-radio" type="radio" name="arrow-sorting" value="down" id="sorting-down">
-                <label class="sorting-label-arrow" for="sorting-down">
-                  <span class="visually-hidden">По убыванию</span>
-                  <svg class="icon-arrow icon-arrow-down" width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <li class="sorting__item">
+                <a class="sorting__option--arrow" href="">
+                  <span class="visually-hidden">по убыванию</span>
+                  <svg class="icon-arrow icon-arrow-down" width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <path d="M5.66241 0L11.1624 10L0.162415 10" fill="#C5C5C5"/>
-                    </svg>
-                </label>
+                  </svg>
+                </a>
               </li>
             </ul>
           </div>
+
           <ul class="catalog__list">
             <li class="catalog__item">
               <a class="catalog__item-link" href="">
