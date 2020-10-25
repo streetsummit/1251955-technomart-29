@@ -52,6 +52,7 @@
     --checkbox-hover-color: #b5b5b5;
 
     --popup-background-color: #f1f1f1;
+    --slider-background-color: #beae9a;
 }
 
 /* Fonts */
@@ -817,6 +818,9 @@ img {
 
 .slider-slide img {
     display: block;
+    width: 620px;
+    height: 266px;
+    background-color: var(--slider-background-color);
 }
 
 .slide-description {
@@ -969,7 +973,7 @@ img {
     width: 218px;
     padding-bottom: 21px;
 
-    border: 1px solid var(--card-border-grey);    
+    border: 1px solid var(--card-border-grey);
 }
 
 .catalog-item-link {
@@ -979,10 +983,13 @@ img {
 }
 
 .catalog-item-image {
+    order: -1;
     display: flex;
     width: 220px;
     height: 177px;
     margin: 0;
+
+    object-fit: contain;
 }
 
 .catalog-item-image img {
@@ -990,8 +997,6 @@ img {
 }
 
 .catalog-item-title {
-    order: 2;
-    
     margin: 0;
     padding: 0 30px;
 
@@ -1061,7 +1066,6 @@ img {
 }
 
 .catalog-item-buttons button {
-    
     width: 135px;
     
     font-size: 14px;
@@ -1070,6 +1074,7 @@ img {
     text-transform: uppercase;
     
     border-radius: 2px;
+    cursor: pointer;
 }
 
 .button-buy {
@@ -1120,8 +1125,7 @@ img {
     border-color: var(--light-blue);
 }
 
-.button-bookmark:active,
-.button-bookmark:focus {
+.button-bookmark:active {
     opacity: 0.5;
 }
 
@@ -1129,11 +1133,13 @@ img {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.catalog-item:hover .catalog-item-buttons {
+.catalog-item:hover .catalog-item-buttons,
+.catalog-item:focus-within .catalog-item-buttons {
     opacity: 1;
 }
 
-.catalog-item:hover img {
+.catalog-item:hover img,
+.catalog-item:focus-within img {
     opacity: 0;
 }
 
@@ -1622,7 +1628,7 @@ img {
                         "catalog-header catalog-header"
                         "filter         sorting"
                         "filter         catalog"
-                        "   .           pagination" ;
+                        "   .           pagination";
         
 }
 
@@ -1965,7 +1971,7 @@ img {
     
     flex-shrink: 0;
     width: 443px;
-    margin: 0;   
+    margin: 0;
     padding: 0;
 
     list-style: none;
@@ -2016,7 +2022,7 @@ img {
     border-top-width: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-bottom: 11px solid var(--light-grey);    
+    border-bottom: 11px solid var(--light-grey);
 }
 
 .sorting-arrow-down {
