@@ -1,8 +1,8 @@
 /*Modal map*/
 
-const mapButton = document.querySelector(".contacts-map");
-const mapModal = document.querySelector(".modal-map");
-const mapClose = mapModal.querySelector(".modal-close");
+var mapButton = document.querySelector(".contacts-map");
+var mapModal = document.querySelector(".modal-map");
+var mapClose = mapModal.querySelector(".modal-close");
 
 mapButton.addEventListener("click", function(evt) {
     evt.preventDefault();
@@ -25,16 +25,16 @@ window.addEventListener("keydown", function (evt) {
 
 
 /*Modal feedback*/
-const feedbackButton = document.querySelector(".contacts-button");
-const feedbackModal = document.querySelector(".modal-feedback");
-const feedbackClose = feedbackModal.querySelector(".modal-close");
-const feedbackUsername = feedbackModal.querySelector("[name=username]");
-const feedbackForm = feedbackModal.querySelector(".feedback-form");
-const feedbackEmail = feedbackModal.querySelector("[name=email]");
-const feedbackMessage = feedbackModal.querySelector("[name=message]");
+var feedbackButton = document.querySelector(".contacts-button");
+var feedbackModal = document.querySelector(".modal-feedback");
+var feedbackClose = feedbackModal.querySelector(".modal-close");
+var feedbackUsername = feedbackModal.querySelector("[name=username]");
+var feedbackForm = feedbackModal.querySelector(".feedback-form");
+var feedbackEmail = feedbackModal.querySelector("[name=email]");
+var feedbackMessage = feedbackModal.querySelector("[name=message]");
 
-let isStorageSupport = true;
-let storage = "";
+var isStorageSupport = true;
+var storage = "";
 
 try {
   storage = localStorage.getItem("username");

@@ -5,8 +5,8 @@
     <title>HTML Academy: Техномарт</title>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/min.normalize.css" rel="stylesheet">
+    <link href="css/min.style.css" rel="stylesheet">
   </head>
 
   <body>
@@ -15,10 +15,10 @@
         <div class="header-top-wrapper container">
           <a class="header-logo disabled-link">
             <img src="img/header-logo.svg" width="108" height="18" alt="Логотип магазина «Техномарт»">
-          </a>
-          <!--Форма поиска-->
-          <form class="header-search" action="#" method="GET" aria-label="Поиск по сайту">
-            <input class="search-input" type="search" placeholder="Поиск:">
+          </a>          
+          <form class="header-search" action="#" method="GET">
+            <label class="visually-hidden" for="search-form">Поиск по сайту</label>
+            <input class="search-input" type="search" placeholder="Поиск:" id="search-form">
             <button class="search-button" type="button">
               <span class="visually-hidden">Найти</span>
               <svg class="search-icon" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -125,8 +125,8 @@
             <button class="slider-button slider-button--next" type="button" aria-label="Следующий слайд"></button>
 
             <div class="slider-dot-controls">
-              <span class="slider-button--dot dot-current" type="button" aria-label="Первый слайд"></span>
-              <span class="slider-button--dot" type="button" aria-label="Второй слайд"></span>
+              <span class="slider-button--dot dot-current" aria-label="Первый слайд"></span>
+              <span class="slider-button--dot" aria-label="Второй слайд"></span>
             </div>
           </div>
         </div>
@@ -422,9 +422,8 @@
       
       <button class="modal-close" type="button" aria-label="Закрыть"></button>
     </section>
-    <script src="js/modal.js"></script>
-    <script src="js/modal-cart.js"></script>
-    
-    <script src="js/sliders.js"></script>
+    <script src="js/min.modal.js"></script>
+    <script src="js/min.modal-cart.js"></script>    
+    <script src="js/min.sliders.js"></script>
   </body>
 </html>

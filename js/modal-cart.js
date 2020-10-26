@@ -1,9 +1,9 @@
 /*Modal add to cart*/
 
-const addCartButton = document.querySelectorAll(".button-buy");
-const addCartModal = document.querySelector(".modal-addcart");
-const addCartClose = addCartModal.querySelector(".modal-close");
-const modalContinue = addCartModal.querySelector(".modal-continue");
+var addCartButton = document.querySelectorAll(".button-buy");
+var addCartModal = document.querySelector(".modal-addcart");
+var addCartClose = addCartModal.querySelector(".modal-close");
+var modalContinue = addCartModal.querySelector(".modal-continue");
 
 for (var index = 0, len = addCartButton.length; index < len; ++index) {
         addCartButton[index].addEventListener("click", function(evt) {
