@@ -268,22 +268,22 @@ img {
 
 .search-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     font-size: 18px;
-    color: #fff;
+    color: var(--basic-white);
   }
   
   .search-input::-moz-placeholder { /* Firefox 19+ */
     font-size: 18px;
-    color: #fff;
+    color: var(--basic-white);
   }
   
   .search-input:-ms-input-placeholder { /* IE 10+ */
     font-size: 18px;
-    color: #fff;
+    color: var(--basic-white);
   }
   
   .search-input:-moz-placeholder { /* Firefox 18- */
     font-size: 18px;
-    color: #fff;
+    color: var(--basic-white);
   }
 
 .search-navigation {
@@ -1065,8 +1065,8 @@ img {
     align-self: center;
 }
 
-.catalog-item-buttons button {
-    width: 135px;
+.catalog-item-buttons a {
+    width: 115px;
     
     font-size: 14px;
     line-height: 18px;
